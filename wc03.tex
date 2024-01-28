@@ -71,15 +71,14 @@
 
   Fill the right-most column in the table below, mentioning the connective in the header. See the middle column at the bottom of Table \ref{table} as an example of using 2 primitives.
   \begin{solution}
-    % Enter your solution here.
-    \begin{tabular}{C||C}
-      & \text{Primitive: } \\
+   \begin{tabular}{C||C}
+      & \text{Primitive:  $\implies$  } \\
       \hline\hline
-      \lnot p &  \\
-      p \lor q & \\
-      p \land q & \\
-      p \implies q \\
-      p \iff q & \\
+      \lnot p &  p\implies false\\
+      p \lor q &  (p \implies false)\implies q\\
+      p \land q & (p \implies (q\implies false))\implies false\\
+      p \implies q & p \implies q  \\
+      p \iff q & [(p\implies q)\implies((q\implies p)\implies false)]\implies false\\
     \end{tabular}
   \end{solution}
   \newpage
@@ -88,14 +87,14 @@
   The table below already contains the pair from Table \ref{table}. Add another pair and complete the rightmost column. Add more columns for any further pairs.
   \begin{solution} \null\newline
     % Enter your solution here.
-    \begin{tabular}{C||C|C}
-      & \text{Primitives: }\lnot, \land & \text{Primitives: }\\
+   \begin{tabular}{C||C|C}
+      & \text{Primitives: }\lnot, \land & \text{Primitives: } \lnot, \lor \\
       \hline\hline
-      \lnot p &  & \\
-      p \lor q & \lnot(\lnot p \land \lnot q) & \\
-      p \land q & & \\
-      p \implies q & \lnot p \lor q & \\
-      p \iff q & (p \implies q) \land (q \implies p) & \\
+      \lnot p &  & \lnot p\\
+      p \lor q & \lnot(\lnot p \land \lnot q) & p \lor q \\
+      p \land q & & \lnot(\lnot p\lor \lnot q)\\
+      p \implies q & \lnot p \lor q & \lnot p \lor q\\
+      p \iff q & (p \implies q) \land (q \implies p) & \lnot (\lnot (\lnot p \lor q) \lor \lnot ( \lnot q \lor p)) \\
     \end{tabular}
   \end{solution}
 \end{parts}
